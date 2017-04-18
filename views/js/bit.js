@@ -535,14 +535,16 @@ $(document).ready(function() {
     success: function(results) {
       $.each( results, function( key, value ) {
         var buildingEvents = $.map(value, function(item) {
-          return {
-            id: item.id,
-            title: item.title,
-            start: item.datetime,
-            ticketUrl: item.ticket_url
-          };
+          if (item.id&&item.datetime&&item.title&&item.ticket_url) {
+            return {
+              id: item.id,
+              title: item.title,
+              start: item.datetime,
+              ticketUrl: item.ticket_url
+            };
+          }
         });
-        $('#calendar').fullCalendar('renderEvents', buildingEvents);
+        $('#calendar').fullCalendar('renderEvents', buildingEvents, true);
       });
     }
   });

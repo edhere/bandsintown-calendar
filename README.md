@@ -27,7 +27,11 @@ An easy to install calendar that displays all the artists events.
 
 ## Deploying
 
-In the root of the project, run the following for deploying the Bandsintown aggregator handler code to an AWS lambda function, and for pushing the static assets for the calendar to AWS S3.
+### This is only neccessary is your are attempting to publish your own 
+
+In the root of the project, run the following for deploying the Bandsintown aggregator handler code to an AWS lambda function
 
 `python3 tasks/deploy_lambda_function.py`
+
+In the root of the project, run the following for pushing the static assets for the calendar to AWS S3
 `python3 tasks/deploy_static_assets.py`
